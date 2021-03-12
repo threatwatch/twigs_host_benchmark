@@ -55,10 +55,8 @@ def process_report(report_file, asset_id):
     return config_issues
 
 def run_host_benchmark(host, asset_id, args):
-    logging.info("Running host benchmark for [%s]. This could take sometime...", host['hostname'])
+    logging.info("Running host benchmark for [%s]. This may take some time...", host['hostname'])
     args_encoding = args.encoding
-    #import pdb; pdb.set_trace()
-    #args_encoding = 'latin-1' # TODO remove
     config_issues = []
     bundled_tar_path = os.path.dirname(os.path.realpath(__file__)) + os.sep + 'lynis-3.0.1.tar.gz'
     local_temp_dir = tempfile.mkdtemp()
